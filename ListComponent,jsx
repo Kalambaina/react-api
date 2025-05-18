@@ -1,0 +1,23 @@
+import React from 'react';
+
+function ListComponent({ items, renderItem }) {
+  if (!items || items.length === 0) {
+    return <p>No items to display.</p>;
+  }
+
+  return (
+    <ul style={styles.list}>
+      {items.map((item) => renderItem(item))}
+    </ul>
+  );
+}
+
+const styles = {
+  list: {
+    listStyleType: 'none',
+    padding: 0,
+    marginTop: '1rem',
+  },
+};
+
+export default ListComponent;
